@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Office Employee Management System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Office Employee Details</h1>
+    <hr>
+    <table class="table table-dark table-success">
+
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Salary</th>
+          <th scope="col">Bonus</th>
+          <th scope="col">Phone Number</th>
+          <th scope="col">Role</th>
+          <th scope="col">Department</th>
+          <th scope="col">Location</th>
+          <th scope="col">Hire Date</th>
+        </tr>
+      </thead>
+      {% for emp in emps %}
+      <tbody>
+        <tr>
+          <th scope="row"></th>
+          <td>{{emp.first_name}}</td>
+          <td>{{emp.last_name}}</td>
+          <td>{{emp.salary}}</td>
+          <td>{{emp.bonus}}</td>
+          <td>{{emp.phone}}</td>
+          <td>{{emp.role.name}}</td>
+          <td>{{emp.dept.name}}</td>
+          <td>{{emp.dept.location}}</td>
+          <td>{{emp.hire_date}}</td>
+        </tr>
+      </tbody>
+      {% endfor %}
+    </table>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>
